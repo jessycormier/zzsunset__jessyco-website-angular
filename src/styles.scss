@@ -3,19 +3,54 @@
 @tailwind base;
 
 @layer base {
-    h1 {
-      @apply text-2xl;
+    @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/Inter.woff2') format('woff2');
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
     }
-    h2 {
-      @apply text-xl;
+
+    html,
+    body {
+          font-family: 'Inter', sans-serif;
+        height: 100%;
     }
-    h3 {
-      @apply text-lg;
+
+    // h1 {
+    //     @apply text-2xl;
+    // }
+
+    // h2 {
+    //     @apply text-xl;
+    // }
+
+    // h3 {
+    //     @apply text-lg;
+    // }
+
+    p {
+        @apply pb-2;
     }
+
     a {
-      @apply text-blue-600 underline;
+        @apply transition-colors;
+        @apply text-blue-500 font-bold;
+        @apply hover:text-blue-700;
+
+        @apply dark:text-blue-400;
+        @apply hover:dark:text-yellow-200;
     }
-  }
+
+    code {
+        @apply transition-colors;
+        @apply text-blue-500 font-bold;
+        @apply hover:text-blue-700;
+
+        @apply dark:text-blue-400;
+        @apply hover:dark:text-yellow-200;
+    }
+}
 
 
 @tailwind components;
