@@ -1,14 +1,39 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>Jessy.Co</title>
   <base href="/">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="initial-scale=1.0, width=device-width" /> -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preload" href="assets/fonts/Inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+
+  <script>
+    /**
+     * A IIFE to set the theme mode for the website.
+     * Helps prevent flickering effect when using dark themes and refreshing.
+     **/
+    (function themeSetter() {
+
+      const key = 'theme_mode';
+      let currentThemeMode = localStorage.getItem(key);
+      let isThemeModeLight = currentThemeMode === 'light';
+      let isThemeModeDark = currentThemeMode === 'dark';
+      let hasThemeMode = (isThemeModeDark || isThemeModeLight);
+      
+      if (!hasThemeMode) {
+        currentThemeMode = 'dark';
+        localStorage.setItem(key, currentThemeMode);
+      }
+      
+      document.getElementsByTagName('html')[0].classList.add(currentThemeMode)
+      document.body.classList.add(currentThemeMode);
+      
+    })();
+  </script>
+
 </head>
 
 <body class='transition-colors dark:bg-gray-900 dark:text-gray-200'>
