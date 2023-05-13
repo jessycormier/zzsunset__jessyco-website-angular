@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { TextHighlightComponent } from './text-highlight/text-highlight.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +14,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

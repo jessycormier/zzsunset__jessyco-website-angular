@@ -26,5 +26,10 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-    }
+    },
+    "cSpell.words": [
+        "devkit",
+        "prismjs",
+        "tailwindcss"
+    ]
 }
